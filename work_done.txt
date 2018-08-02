@@ -1,0 +1,3 @@
+Setup and installed Go and Visual code.
+Created simple hello world in Go.
+Learned basics of Go language.
