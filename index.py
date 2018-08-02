@@ -46,9 +46,6 @@ def main(fro,to,cc):
     write_to_file(path + "body.html",project,work_done,todo)
     data = read_data(path + "body.html")
 
-    #fro = "Shihad Thayyil"
-    #to = "amalv@qburst.com"
-    #cc = "trainer@qburst.com, subinb@qburst.com, jesin@qburst.com, vijesh@qburst.com"
     subject = "Status Report - " + format_date() 
 
     answer = 'no'
