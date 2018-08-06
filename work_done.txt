@@ -1,3 +1,2 @@
-Setup and installed Go and Visual code.
-Created simple hello world in Go.
-Learned basics of Go language.
+Learned basic functions and recievers in Go.
+Created simple Go program using above concepts.

@@ -30,7 +30,7 @@ def read_conf():
     cc = infile.readline()
     fro = fro[5:].strip()
     to = to[3:].strip()
-    cc = cc[4:].strip()
+    cc = cc[3:].strip()
     print("From: " + fro)
     print("To: " + to)
     print("CC: " + cc + "\n\n")
