@@ -1,2 +1,2 @@
-Learned basic functions and recievers in Go.
-Created simple Go program using above concepts.
+Learned about Reader and Writer interfaces in Go and created custom Writer interface.
+Created web application using Beego framework.
