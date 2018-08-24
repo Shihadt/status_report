@@ -17,10 +17,10 @@ path = sys.argv[1] + "/"
 def email_function(fro,to,cc,header,msg):
 # Setup the Gmail API
     SCOPES = 'https://www.googleapis.com/auth/gmail.compose' 
-    store = file.Storage(path + 'credentials.json')
+    store = file.Storage(path + 'token.json')
     creds = store.get()
     if not creds or creds.invalid:
-        flow = client.flow_from_clientsecrets(path + 'client_secret.json', SCOPES)
+        flow = client.flow_from_clientsecrets(path + 'credentials.json', SCOPES)
         creds = tools.run_flow(flow, store)
     service = build('gmail', 'v1', http=creds.authorize(Http()))
 

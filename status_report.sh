@@ -35,8 +35,11 @@ if [ ! -f "$( echo $paths)/conf.in" ]; then
     read your_name
     echo "Enter your phone number: "
     read your_phone
-    sed -e "s/Your\ Name/$(echo $your_name)/1" body.html
-    sed -e "s/Your\ Phone/$(echo $your_phone)/1" body.html
+    sed -e "s/Your\ Name/$(echo $your_name)/1" $( echo $paths)/sign.html > $( echo $paths)/sign.html
+    sed -e "s/Your\ Phone/$(echo $your_phone)/1" $( echo $paths)/sign.html > $( echo $paths)/sign.html
+
+    touch work_done.txt
+    touch todo.txt
 fi
 echo "Enter work done"
 vim $(echo $paths)/work_done.txt

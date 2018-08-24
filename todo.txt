@@ -1,2 +1,1 @@
-To learn about Go routines and synchronization.
-To create a website status checker in Go.
+To learn advance concepts in Go.

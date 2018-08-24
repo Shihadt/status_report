@@ -2,3 +2,5 @@
 *.pyc
 space/home
 conf.in
+work_done.txt
+todo.txt
