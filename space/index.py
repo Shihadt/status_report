@@ -3,7 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
 #from selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
 from selenium.webdriver.support.ui import Select
+import sys
 
+
+path = sys.argv[1]
 def read_data(file_name):
 	inp = open(file_name)
 	text = ""
@@ -31,7 +34,7 @@ def wait_for_ajax(my_driver):
 def main_fun():
 	options = webdriver.ChromeOptions()
 #	options.add_argument("user-data-dir=home/ShihaD/.config/google-chrome/Default") #Path to your chrome profile
-	options.add_argument("user-data-dir=/home/ShihaD/.config/google-chrome/Default")	
+	options.add_argument("user-data-dir=/home/user/.config/google-chrome/Default")	
 	options.add_argument('--no-sandbox')
 	options.add_argument('--disable-dev-shm-usage')
 	#options.add_argument('--headless')
@@ -44,7 +47,7 @@ def main_fun():
 	#element = driver.find_element_by_xpath("//select[@name='activityType']/option[value()=5]").click()
 	select = Select(driver.find_element_by_id('activityType'))
 	select.select_by_value('1')
-	text = read_data('/home/ShihaD/Documents/shihad/work/amail/work_done.txt')
+	text = read_data(path+'/work_done.txt')
 	driver.find_element_by_id("message").clear()
 	driver.find_element_by_id('message').send_keys(text)
 	return driver

@@ -28,14 +28,16 @@ def read_conf():
     fro = infile.readline()
     to = infile.readline()
     cc = infile.readline()
+    pname = infile.readline()
     fro = fro[5:].strip()
     to = to[3:].strip()
     cc = cc[3:].strip()
     print("From: " + fro)
     print("To: " + to)
     print("CC: " + cc + "\n\n")
-    t=(fro,to,cc)
+    t=(fro,to,cc,pname)
     return t
+
 
 def main(fro,to,cc):
     path = sys.argv[1]
@@ -57,4 +59,4 @@ def main(fro,to,cc):
 
 
 t = read_conf()
-main(t[0], t[1], t[2])
+main(t[0], t[1], t[2],t[3])

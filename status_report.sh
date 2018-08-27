@@ -7,6 +7,7 @@ if [ ! -f "$( echo $paths)/conf.in" ]; then
     echo "Installing necessary libraries"
     wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
     sudo unzip -o chromedriver_linux64.zip -d /usr/bin/
+    sudo apt install python-pip
 
     pip install --upgrade google-api-python-client oauth2client
     pip install httplib2
@@ -42,9 +43,9 @@ if [ ! -f "$( echo $paths)/conf.in" ]; then
     touch todo.txt
 fi
 echo "Enter work done"
-vim $(echo $paths)/work_done.txt
+nano $(echo $paths)/work_done.txt
 echo "Enter to do list"
-vim $(echo $paths)/todo.txt
+nano $(echo $paths)/todo.txt
 echo "Created todo list and workdone list.\n Generating mail using google API"
 python $(echo $paths)/index.py $paths
 echo "succesfully created and send mail."
