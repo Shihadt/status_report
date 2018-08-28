@@ -28,24 +28,27 @@ if [ ! -f "$( echo $paths)/conf.in" ]; then
 	read toid
 	echo "Enter cc. For multiple cc address seperate with it comma(,)"
 	read ccid
+    echo "Enter project name: "
+    read project_name
 	echo "Creating conf.in. For editing above details see conf.in in installation directory"
-	printf "FROM:$myid\nTO:$toid\nCC:$ccid \n" > $( echo $paths)/conf.in
+	printf "FROM:$myid\nTO:$toid\nCC:$ccid\nPNAME:$project_name" > $( echo $paths)/conf.in
 
     echo "Setting up signature"
     echo "Enter your name for displaying in signature : "
     read your_name
     echo "Enter your phone number: "
     read your_phone
-    sed -e "s/Your\ Name/$(echo $your_name)/1" $( echo $paths)/sign.html > $( echo $paths)/sign.html
-    sed -e "s/Your\ Phone/$(echo $your_phone)/1" $( echo $paths)/sign.html > $( echo $paths)/sign.html
+    # sed -e "s/Your\ Name/$(echo $your_name)/1" $( echo $paths)/sign.html > $( echo $paths)/sign.html
+    # sed -e "s/Your\ Phone/$(echo $your_phone)/1" $( echo $paths)/sign.html > $( echo $paths)/sign.html
+    python sample.py
 
     touch work_done.txt
     touch todo.txt
 fi
 echo "Enter work done"
-nano $(echo $paths)/work_done.txt
+gedit $(echo $paths)/work_done.txt
 echo "Enter to do list"
-nano $(echo $paths)/todo.txt
+gedit $(echo $paths)/todo.txt
 echo "Created todo list and workdone list.\n Generating mail using google API"
 python $(echo $paths)/index.py $paths
 echo "succesfully created and send mail."
