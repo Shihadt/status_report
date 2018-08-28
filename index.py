@@ -39,10 +39,9 @@ def read_conf():
     return t
 
 
-def main(fro,to,cc):
+def main(fro,to,cc,project):
     path = sys.argv[1]
     path = path+"/"
-    project = "N/A"
     work_done = read_file(path + "work_done.txt")
     todo = read_file(path + "todo.txt")
     write_to_file(path + "body.html",project,work_done,todo)
