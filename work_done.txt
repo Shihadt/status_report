@@ -1,2 +1,0 @@
-Learned Golang routines and channels.
-Completed learning Golang training.
