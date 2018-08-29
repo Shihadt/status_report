@@ -32,6 +32,7 @@ def read_conf():
     fro = fro[5:].strip()
     to = to[3:].strip()
     cc = cc[3:].strip()
+    pname=pname[6:]
     print("From: " + fro)
     print("To: " + to)
     print("CC: " + cc + "\n\n")
@@ -44,7 +45,7 @@ def main(fro,to,cc,project):
     path = path+"/"
     work_done = read_file(path + "work_done.txt")
     todo = read_file(path + "todo.txt")
-    write_to_file(path + "body.html",project,work_done,todo)
+    write_to_file(path + "body.html",project,work_done,todo,path)
     data = read_data(path + "body.html")
 
     subject = "Status Report - " + format_date() 

@@ -4,7 +4,7 @@ def read_sign(filename):
     inp = open(filename,'r')
     return inp.readline()
 
-def write_to_file(filename,project, work_done, todo):
+def write_to_file(filename,project, work_done, todo,path):
     date_formated = format_date()
     out = open(filename,"w+")
     out.write("""
@@ -20,7 +20,7 @@ def write_to_file(filename,project, work_done, todo):
     + work_done +
     """     <b>To Do:</b>"""
     + todo +
-    read_sign('sign.html')
+    read_sign(path+'sign.html')
     +
     """
     </body>

@@ -46,9 +46,9 @@ if [ ! -f "$( echo $paths)/conf.in" ]; then
     touch todo.txt
 fi
 echo "Enter work done"
-gedit $(echo $paths)/work_done.txt
+nano $(echo $paths)/work_done.txt
 echo "Enter to do list"
-gedit $(echo $paths)/todo.txt
+nano $(echo $paths)/todo.txt
 echo "Created todo list and workdone list.\n Generating mail using google API"
 python $(echo $paths)/index.py $paths
 echo "succesfully created and send mail."
